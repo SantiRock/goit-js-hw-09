@@ -9,7 +9,7 @@ const hours = document.querySelector("span[data-hours]");
 const minutes = document.querySelector("span[data-minutes]");
 const seconds = document.querySelector("span[data-seconds]");
 let startDate;
-let timer = null;
+let timerId = null;
 start.disabled = true; 
 
 // Setting flatpickr -----------
@@ -63,7 +63,7 @@ function addLeadingZero(value) {
 const onClick = () => {
     start.disabled = true;
 
-    timer = setInterval(() => {
+    timerId = setInterval(() => {
         const today = new Date();
         const ms =  startDate.getTime() - today.getTime();
         const dateDiference = convertMs(ms);
@@ -76,3 +76,34 @@ const onClick = () => {
 };
 
 start.addEventListener("click", onClick);
+
+
+// Setting Style ------
+
+const timer = document.querySelector(".timer");
+timer.style.marginTop = "10px";
+timer.style.display = "flex";
+timer.style.fontFamily = " 'Courier new', Courier";
+
+const fields = document.querySelectorAll(".field");
+for (let field of fields) {
+    field.style.marginRight = "15px";
+    field.style.display = "flex";
+    field.style.flexDirection = "column";
+    field.style.textAlign = "center";
+};
+
+const values = document.querySelectorAll(".value");
+for (let value of values) {
+    value.style.fontSize = "30px";
+    value.style.height = "40px";
+};
+
+const labels = document.querySelectorAll(".label");
+for (let label of labels) {
+    label.style.fontSize = "12px";
+    label.style.textTransform = "uppercase";
+};
+
+
+

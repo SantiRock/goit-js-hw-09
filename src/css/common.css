@@ -17,23 +17,9 @@ img {
   max-width: 100%;
 }
 
-.timer {
-  margin-top: 10px;
-  display: flex;
-  font-family: 'Courier New', Courier, monospace;
-}
 
-.field {
-  margin-right: 15px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
 
-.value {
-  font-size: 30px;
-  height: 40px;
-}
+
 
 .label {
   padding: 0;
