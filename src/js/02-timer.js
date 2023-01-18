@@ -56,7 +56,7 @@ function convertMs(ms) {
   }
 
 function addLeadingZero(value) {
-    text = value.toString();
+    let text = value.toString();
     return text.padStart(2,"0");
 }
 
