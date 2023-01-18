@@ -65,13 +65,23 @@ const onClick = () => {
 
     timerId = setInterval(() => {
         const today = new Date();
-        const ms =  startDate.getTime() - today.getTime();
+        const ms =  startDate - today;
         const dateDiference = convertMs(ms);
+        console.log(dateDiference);
         
         days.textContent = addLeadingZero(dateDiference.days);
         hours.textContent = addLeadingZero(dateDiference.hours);
         minutes.textContent = addLeadingZero(dateDiference.minutes);
         seconds.textContent = addLeadingZero(dateDiference.seconds);
+
+        if ( ms <= 0 ) {
+            clearInterval(timerId);
+            days.textContent = "00";
+            hours.textContent = "00";
+            minutes.textContent = "00";
+            seconds.textContent = "00";
+        }
+
     }, 1000);
 };
 
