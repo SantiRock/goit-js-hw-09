@@ -96,24 +96,39 @@ timer.style.display = "flex";
 timer.style.fontFamily = " 'Courier new', Courier";
 
 const fields = document.querySelectorAll(".field");
-for (let field of fields) {
+/*for (let field of fields) {
     field.style.marginRight = "15px";
     field.style.display = "flex";
     field.style.flexDirection = "column";
     field.style.textAlign = "center";
-};
+};*/
+fields.forEach(field => {
+    field.style.marginRight = "15px";
+    field.style.display = "flex";
+    field.style.flexDirection = "column";
+    field.style.textAlign = "center";
+});
 
 const values = document.querySelectorAll(".value");
-for (let value of values) {
+/*for (let value of values) {
+
+};*/
+values.forEach(value => {
     value.style.fontSize = "30px";
     value.style.height = "40px";
-};
+})
+
 
 const labels = document.querySelectorAll(".label");
-for (let label of labels) {
+/*for (let label of labels) {
     label.style.fontSize = "12px";
     label.style.textTransform = "uppercase";
-};
+};*/
+labels.forEach(label => {
+    label.style.fontSize = "12px";
+    label.style.textTransform = "uppercase";
+})
+
 
 
 
