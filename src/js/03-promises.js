@@ -16,6 +16,49 @@ function createPromise(position, delay) {
       }
     }, delay); 
     })
+
+    return promise;
+}
+
+submit.addEventListener("click", (event) => {
+  event.preventDefault();
+  const firstDelay = Number.parseInt(delayInput.value);
+  const step = Number.parseInt(stepInput.value);
+  const amount = Number.parseInt(amountInput.value);
+  let stepp = 0;
+
+  for ( let i = 1; i <= amount; i++ ) {
+    let d = firstDelay + stepp; 
+
+    createPromise(i, d)
+    .then(value => {
+      Notiflix.Notify.success(value);
+    })
+    .catch(error => {
+      Notiflix.Notify.failure(error);
+    });
+
+    stepp += step;
+    console.log(d);
+    }
+  } 
+);
+
+
+
+
+/*
+function createPromise(position, delay) {
+  let promise = new Promise ((resolve, reject) => {
+    const shouldResolve = Math.random() > 0.3;
+    setTimeout(() => {
+      if (shouldResolve) {
+        resolve(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      } else {
+        reject(`❌ Rejected promise ${position} in ${delay}ms`);
+      }
+    }, delay); 
+    })
   
   promise
   .then(value => {
@@ -41,4 +84,4 @@ submit.addEventListener("click", (event) => {
     }
   } 
 );
-
+*/
